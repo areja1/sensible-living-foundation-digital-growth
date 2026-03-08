@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Go
+backend/bin/
+*.exe
+
+# Environment variables — never commit real keys
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
