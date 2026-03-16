@@ -135,7 +135,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Sensible Living Foundation. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-3 items-center justify-center">
-            {["501(c)(3) Nonprofit", "EIN: XX-XXXXXXX", "Charity Navigator ★★★★", "Candid Platinum"].map((b) => (
+            {["501(c)(3) Nonprofit", "EIN: 99-2323968", "Candid Silver Transparency"].map((b) => (
               <span key={b}
                 className="text-xs px-3 py-1 rounded-full border border-white/10 text-gray-500">
                 {b}

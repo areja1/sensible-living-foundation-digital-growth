@@ -52,7 +52,7 @@ export default function DonationForm() {
         Donate {selected !== "Other" ? selected : ""} {freq === "Give Monthly" ? "/ Month" : ""} →
       </button>
       <p className="text-center text-xs text-gray-400 mt-3">
-        Secure · Tax-deductible · No fees via Givebutter
+        Secure · Tax-deductible · 501(c)(3) · EIN: 99-2323968
       </p>
     </div>
   );

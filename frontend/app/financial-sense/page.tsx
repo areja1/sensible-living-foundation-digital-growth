@@ -81,7 +81,7 @@ export default function FinancialSense() {
               <em>"Accelerating Financial Opportunity for All"</em>
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg">
-              Free, practical financial literacy education for individuals, families,
+              No-cost, practical financial literacy education for individuals, families,
               and communities who have been underserved by traditional financial systems.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -90,7 +90,7 @@ export default function FinancialSense() {
                 className="px-8 py-4 rounded text-white font-bold text-sm uppercase tracking-wide transition-colors"
                 style={{ background: "#E1251B" }}
               >
-                Request Free Programming
+                Request Programming
               </Link>
               <Link
                 href="/get-involved#donate"
@@ -111,7 +111,7 @@ export default function FinancialSense() {
               Be First to Enroll
             </h3>
             <p className="text-gray-500 text-sm mb-6">
-              Our Financial Sense program is launching in Phoenix in 2026. Join the interest list and we'll reach out when enrollment opens — always free.
+              Our Financial Sense program is launching in Phoenix in 2026. Join the interest list and we'll reach out when enrollment opens — always at no cost.
             </p>
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
@@ -135,11 +135,11 @@ export default function FinancialSense() {
               <button type="submit"
                 className="w-full py-4 text-white font-bold text-sm uppercase tracking-wide rounded transition-colors hover:opacity-90"
                 style={{ background: "#E1251B" }}>
-                Join the Interest List — Free
+                Join the Interest List
               </button>
             </form>
             <p className="text-xs text-gray-400 text-center mt-4">
-              Always free. No financial product sales. We'll contact you when enrollment opens.
+              Always at no cost. No financial product sales. We'll contact you when enrollment opens.
             </p>
           </div>
         </div>
@@ -149,10 +149,10 @@ export default function FinancialSense() {
       <section className="py-12" style={{ background: "#F3F4F4" }}>
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-6 text-center">
           {[
-            { number: "3",    label: "Program Levels" },
+            { number: "3",       label: "Program Levels" },
             { number: "101–303", label: "Curriculum Stages" },
-            { number: "15–18", label: "Month Program Path" },
-            { number: "Free", label: "Cost to All Participants" },
+            { number: "9–12",    label: "Month Avg. Path" },
+            { number: "No Cost", label: "To All Participants" },
           ].map((s) => (
             <div key={s.label} className="py-6">
               <p className="font-serif text-4xl font-extrabold mb-1" style={{ color: "#06205C" }}>{s.number}</p>
@@ -209,7 +209,7 @@ export default function FinancialSense() {
                 label: "Educate",
                 tagline: "Knowledge that sticks",
                 desc: "Practical, no-jargon financial literacy — budgeting, credit, savings, debt — taught in a way that participants can apply the same day they learn it.",
-                items: ["101 / 202 / 303 curriculum", "Module-based learning", "Real financial concepts", "No barriers, always free"],
+                items: ["101 / 202 / 303 curriculum", "Module-based learning", "Real financial concepts", "No barriers, no cost"],
                 accentColor: "#4ADE80",
                 delay: "0s",
                 float: "fs-floatA 10s ease-in-out infinite",
@@ -303,7 +303,7 @@ export default function FinancialSense() {
               <p className="text-gray-600 leading-relaxed text-lg mb-5">
                 We are building a structured online platform where participants can enroll, complete
                 learning modules at their own pace, track their progress, and work through real financial
-                milestones — all for free.
+                milestones — all at no cost.
               </p>
               <p className="text-gray-500 leading-relaxed mb-8">
                 The portal will start simple and grow more personalized and adaptive over time —
@@ -471,8 +471,8 @@ export default function FinancialSense() {
               Three levels. One transformation.
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              Each level builds on the last. The full program spans approximately 15–18 months —
-              with each stage running 3 to 6 months depending on your pace and needs.
+              Each level builds on the last. Most participants complete the program in
+              9–12 months on average — progressing at a pace that works for their life.
             </p>
           </div>
 
@@ -481,44 +481,23 @@ export default function FinancialSense() {
               {
                 level: "101",
                 title: "Introduction to Financial Literacy",
-                timeline: "3–6 Months",
+                timeline: "3–4 Months",
                 color: "#06205C",
-                topics: [
-                  "Budgeting basics",
-                  "Understanding income and expenses",
-                  "Savings habits and starter goals",
-                  "Banking basics and account management",
-                  "Debt awareness and types of debt",
-                  "Financial goal setting",
-                ],
+                summary: "We start with the fundamentals — budgeting, understanding income and expenses, building savings habits, and setting financial goals. This level meets you wherever you are and builds a strong foundation from the ground up.",
               },
               {
                 level: "202",
                 title: "Building Financial Momentum",
-                timeline: "3–6 Months",
+                timeline: "3–4 Months",
                 color: "#182857",
-                topics: [
-                  "Debt reduction strategy",
-                  "Credit building and repair",
-                  "Emergency savings planning",
-                  "Financial planning habits",
-                  "Improving spending systems",
-                  "Developing stronger financial routines",
-                ],
+                summary: "With the basics in place, participants focus on reducing debt, building or repairing credit, and strengthening their financial habits. This is where real momentum begins and lasting routines take hold.",
               },
               {
                 level: "303",
                 title: "Advanced Financial Readiness",
-                timeline: "3–6 Months",
+                timeline: "3–4 Months",
                 color: "#1a3a6b",
-                topics: [
-                  "Credit score improvement",
-                  "Long-term savings growth",
-                  "Structured debt payoff strategy",
-                  "Financial stability planning",
-                  "Next-level money management",
-                  "Preparing for major financial milestones",
-                ],
+                summary: "The final level is about long-term stability — improving your credit profile, growing savings, and building the knowledge and plan to maintain lasting financial health for yourself and your family.",
               },
             ].map((item) => (
               <div key={item.level} className="rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
@@ -532,14 +511,7 @@ export default function FinancialSense() {
                   <h3 className="font-serif text-xl font-bold">{item.title}</h3>
                 </div>
                 <div className="p-8">
-                  <ul className="space-y-3">
-                    {item.topics.map((t) => (
-                      <li key={t} className="flex items-start gap-3 text-sm text-gray-600">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: item.color }} />
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.summary}</p>
                 </div>
               </div>
             ))}
@@ -548,17 +520,17 @@ export default function FinancialSense() {
           {/* Timeline visual */}
           <div className="rounded-2xl p-10 text-center" style={{ background: "#F3F4F4" }}>
             <h3 className="font-serif text-2xl font-bold mb-8" style={{ color: "#06205C" }}>
-              Your 15–18 Month Journey
+              Your Journey, At Your Own Pace
             </h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-0">
               {[
-                { label: "101", sub: "Months 1–6", color: "#06205C" },
-                { label: "→",  sub: "",            color: "transparent" },
-                { label: "202", sub: "Months 6–12", color: "#182857" },
-                { label: "→",  sub: "",            color: "transparent" },
-                { label: "303", sub: "Months 12–18", color: "#1a3a6b" },
-                { label: "→",  sub: "",            color: "transparent" },
-                { label: "🎓", sub: "Certificate",  color: "#1B4332" },
+                { label: "101", sub: "Intro Level",    color: "#06205C" },
+                { label: "→",  sub: "",                color: "transparent" },
+                { label: "202", sub: "Intermediate",   color: "#182857" },
+                { label: "→",  sub: "",                color: "transparent" },
+                { label: "303", sub: "Advanced",       color: "#1a3a6b" },
+                { label: "→",  sub: "",                color: "transparent" },
+                { label: "🎓", sub: "Certificate",     color: "#1B4332" },
               ].map((item, i) => (
                 item.label === "→"
                   ? <span key={i} className="text-gray-300 text-3xl font-bold px-2 hidden md:block">→</span>
@@ -699,7 +671,7 @@ export default function FinancialSense() {
 
           {/* Accountability Buddy */}
           <div className="bg-white rounded-2xl p-10 shadow-sm">
-            <span className="text-5xl mb-5 block">👯</span>
+            <span className="text-5xl mb-5 block">🤝</span>
             <span className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3 block">
               Coming Soon
             </span>
@@ -707,16 +679,16 @@ export default function FinancialSense() {
               Accountability Buddy
             </h3>
             <p className="text-gray-500 leading-relaxed mb-6">
-              Financial change is easier when you don't go it alone. We are building a feature that lets
-              participants invite an accountability buddy — a friend, family member, or peer — to go
-              through the program alongside them.
+              Progress is stronger when you have someone in your corner. The accountability buddy
+              feature pairs you with a friend, family member, or trusted peer who keeps you
+              consistent, celebrates your wins, and supports you through every step of the journey.
             </p>
             <ul className="space-y-3 mb-6">
               {[
-                "Encourage each other through tough modules",
-                "Celebrate milestones together",
-                "Work through challenges as a team",
-                "Create a more engaging, supportive experience",
+                "Stay consistent and on track together",
+                "Celebrate milestones and progress",
+                "Lean on each other for encouragement",
+                "Build lasting financial habits as a team",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
                   <span className="mt-1 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#06205C" }} />
@@ -727,7 +699,7 @@ export default function FinancialSense() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
               style={{ background: "#EEF2FF", color: "#06205C" }}>
               <span>🔔</span>
-              <span>Feature launching with the portal</span>
+              <span>Launching with the portal in 2026</span>
             </div>
           </div>
 
@@ -810,23 +782,12 @@ export default function FinancialSense() {
             <div className="rounded-2xl p-10 text-white text-center"
               style={{ background: "linear-gradient(135deg, #06205C, #182857)" }}>
               <span className="text-6xl mb-6 block">🚀</span>
-              <h3 className="font-serif text-2xl font-bold mb-4">Where We Start</h3>
-              <p className="text-blue-200 leading-relaxed mb-8">
-                The first version of the portal will be straightforward and focused — a clean,
-                accessible learning experience anyone can use. From there, it will evolve.
+              <h3 className="font-serif text-2xl font-bold mb-4">Built to Grow</h3>
+              <p className="text-blue-200 leading-relaxed">
+                The Financial Sense portal will launch with a clean, accessible learning
+                experience and grow more personalized over time — always guided by what
+                participants actually need, never locked into a single tool or provider.
               </p>
-              <div className="space-y-3 text-left">
-                {[
-                  { phase: "Phase 1", desc: "Structured 101/202/303 modules, intake, progress tracking" },
-                  { phase: "Phase 2", desc: "Accountability buddy, certificate, homework submission" },
-                  { phase: "Phase 3", desc: "Adaptive learning paths, tool integrations, cohort features" },
-                ].map((item) => (
-                  <div key={item.phase} className="flex gap-3 text-sm">
-                    <span className="font-bold text-yellow-400 shrink-0">{item.phase}:</span>
-                    <span className="text-blue-200">{item.desc}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>

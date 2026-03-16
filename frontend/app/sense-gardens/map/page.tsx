@@ -181,7 +181,7 @@ export default function GardenMap() {
             Are you in a food desert?
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed mb-10">
-            We are building a free public tool that lets anyone enter their ZIP code to find out
+            We are building a no-cost public tool that lets anyone enter their ZIP code to find out
             if they live in or near a food desert — and discover what resources may be available
             nearby. Our goal is to make food access data understandable and actionable for everyone.
           </p>

@@ -117,10 +117,10 @@ export default function Home() {
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center">
           {[
-            { n: "3+",    label: "Pilot Garden Sites", sub: "launching in Phoenix" },
-            { n: "150+",  label: "Families to Reach", sub: "through pilot programs" },
-            { n: "2026",  label: "Launch Year", sub: "programs beginning now" },
-            { n: "Free",  label: "Cost to Participants", sub: "always and forever" },
+            { n: "3+",       label: "Pilot Garden Sites", sub: "planned in Phoenix" },
+            { n: "150+",     label: "Families to Reach", sub: "by end of 2026" },
+            { n: "2023",     label: "Founded", sub: "programs beginning now" },
+            { n: "No Cost",  label: "To Participants", sub: "always and forever" },
           ].map((s) => (
             <div key={s.label} className="py-8 px-6">
               <p className="stat-number text-5xl mb-2" style={{ color: "#1B4332" }}>{s.n}</p>
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-xs font-bold uppercase tracking-widest mb-6 -mt-4" style={{ color: "#2D6A4F" }}>
-            Active Programs
+            Pilot Programs — Launching 2026
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Financial Sense */}
@@ -174,7 +174,7 @@ export default function Home() {
               </div>
               <div className="bg-white p-8">
                 <p className="text-gray-500 leading-relaxed mb-6">
-                  A free, structured financial literacy program covering budgeting, saving, credit,
+                  A no-cost, structured financial literacy program covering budgeting, saving, credit,
                   and wealth-building — designed for individuals and families who need it most,
                   launching in Phoenix in 2026.
                 </p>
@@ -184,7 +184,7 @@ export default function Home() {
                     style={{ color: "#E1251B" }}>
                     Explore Program →
                   </Link>
-                  <span className="text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full">Always Free</span>
+                  <span className="text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full">No Cost to Participants</span>
                 </div>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
                     style={{ color: "#1B4332" }}>
                     Explore Gardens →
                   </Link>
-                  <span className="text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full">Pilots Launching 2026</span>
+                  <span className="text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full">No Cost to Participants</span>
                 </div>
               </div>
             </div>

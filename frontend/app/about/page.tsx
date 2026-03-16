@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "About | Sensible Living Foundation",
@@ -10,7 +11,7 @@ export default function About() {
     <div>
 
       {/* Hero — Harlem Grown full-bleed with text overlay */}
-      <section className="relative min-h-[70vh] flex items-end pb-20 overflow-hidden"
+      <section className="relative flex items-end pb-24 overflow-hidden"
         style={{ background: "linear-gradient(160deg, #1B4332 0%, #1A1A1A 100%)" }}>
         <div className="absolute inset-0 opacity-5"
           style={{
@@ -30,7 +31,7 @@ export default function About() {
       </section>
 
       {/* ─── WHO WE ARE ─── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-16 items-start">
           <div className="md:col-span-3">
             <span className="section-label" style={{ color: "#2D6A4F" }}>Who We Are</span>
@@ -55,7 +56,7 @@ export default function About() {
             <div className="rounded-2xl overflow-hidden" style={{ background: "#FAF7F0" }}>
               <div className="p-8">
                 {[
-                  { label: "Founded",        value: "2020" },
+                  { label: "Founded",        value: "2023" },
                   { label: "Status",         value: "501(c)(3) Nonprofit" },
                   { label: "Focus Areas",    value: "Financial Literacy & Food Access" },
                   { label: "Communities",    value: "Underserved & Low-Income" },
@@ -88,18 +89,18 @@ export default function About() {
           {/* Main story block */}
           <div className="grid md:grid-cols-5 gap-16 items-start mb-16">
 
-            {/* Portrait placeholder */}
+            {/* Founder photo */}
             <div className="md:col-span-2">
               <div className="rounded-2xl overflow-hidden sticky top-24">
-                <div className="h-80 flex flex-col items-center justify-center"
-                  style={{ background: "linear-gradient(160deg, #1B4332 0%, #06205C 100%)" }}>
-                  <div className="w-28 h-28 rounded-full flex items-center justify-center font-serif font-bold text-4xl text-white mb-5"
-                    style={{ background: "rgba(255,255,255,0.12)", border: "2px solid rgba(255,255,255,0.25)" }}>
-                    SLF
-                  </div>
-                  <p className="font-serif text-xl font-bold text-white">Foundation Founder</p>
-                  <p className="text-sm mt-1" style={{ color: "#52B788" }}>Sensible Living Foundation</p>
-                  <p className="text-xs text-gray-400 mt-1">Phoenix, Arizona</p>
+                <div className="relative h-80 w-full overflow-hidden">
+                  <Image
+                    src="/images/founder/founder.jpg"
+                    alt="Founder of the Sensible Living Foundation"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    priority
+                  />
                 </div>
                 {/* Pull stat */}
                 <div className="p-6 text-center" style={{ background: "#1B4332" }}>
@@ -127,26 +128,10 @@ export default function About() {
               </p>
 
               <p className="text-gray-500 leading-relaxed">
-                That upbringing shaped everything. It built an intimate understanding of what it
-                actually feels like to not know how to open a bank account, to choose between
-                groceries and a bill, to be locked out of opportunities that other people take for
-                granted simply because they had access to the right information at the right time.
-              </p>
-
-              <p className="text-gray-500 leading-relaxed">
-                The Sensible Living Foundation was not born in a boardroom. It was born out of that
-                lived experience — out of a belief that the barriers faced by immigrant families
-                and underserved communities are not personal failures. They are systemic gaps. And
-                those gaps can be closed with practical education, real resources, and genuine
-                community investment.
-              </p>
-
-              <p className="text-gray-500 leading-relaxed">
-                Starting in Phoenix — a city where food deserts and financial insecurity intersect
-                in real, visible ways — the work begins with two programs: one focused on financial
-                literacy, one focused on fresh food access. Not because these are the only problems
-                worth solving, but because they are the two most immediate barriers standing between
-                families and a genuinely better life.
+                The Sensible Living Foundation was born from that lived experience — out of a belief
+                that the barriers faced by immigrant families and underserved communities are not
+                personal failures. They are systemic gaps that can be closed with practical education,
+                real resources, and genuine community investment.
               </p>
 
               <div className="rounded-2xl p-8 mt-4"
@@ -155,11 +140,9 @@ export default function About() {
                   "This foundation is not charity. It is infrastructure."
                 </p>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  The goal is not to give people fish — or even to teach them to fish. The goal is
-                  to build the kind of environment where every person has a fair shot at growing
-                  their own, building their own, and passing something real on to their children.
-                  That is what was missing from the communities that shaped this work. That is
-                  exactly what we are building now.
+                  The goal is to build the kind of environment where every person has a fair shot
+                  at growing their own, building their own, and passing something real on to their
+                  children. That is exactly what we are building now.
                 </p>
               </div>
 

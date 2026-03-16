@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const impactCategories = ["Health", "Education", "Community", "Environment"];
 
@@ -17,7 +18,7 @@ const impactContent: Record<string, { stat: string; headline: string; desc: stri
   },
   Community: {
     stat: "2026",
-    headline: "First pilot partnerships launching this year",
+    headline: "First pilot partnerships planned for Phoenix in 2026",
     desc: "We are actively developing partnerships with schools, community centers, and neighborhood organizations to host our first pilot garden systems — bringing food, education, and community connection together in one place.",
   },
   Environment: {
@@ -115,7 +116,7 @@ export default function SenseGardens() {
               Donate Now
             </button>
             <p className="text-xs text-gray-400 text-center mt-4">
-              Secure donation via Givebutter · Tax-deductible · EIN: XX-XXXXXXX
+              Secure donation via Givebutter · Tax-deductible · EIN: 99-2323968
             </p>
           </div>
         </div>
@@ -129,7 +130,7 @@ export default function SenseGardens() {
           </p>
           <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center">
             {[
-              { number: "3+", label: "Pilot Garden Sites", sub: "launching in Phoenix this year" },
+              { number: "3+", label: "Pilot Garden Sites", sub: "planned for Phoenix in 2026" },
               { number: "150+", label: "Families to Reach", sub: "through pilot programming" },
               { number: "500+", label: "Pounds of Produce", sub: "projected first-year yield" },
             ].map((s) => (
@@ -290,19 +291,19 @@ export default function SenseGardens() {
               {
                 icon: "🌿",
                 title: "Vertical Garden Systems",
-                desc: "Tower-based growing systems that stack plants vertically — producing significantly more food per square foot than traditional gardens. Perfect for schools, community centers, and urban spaces with limited ground area.",
+                desc: "Growing systems that stack plants vertically, bringing fresh food to schools, community centers, and neighborhood sites with no traditional garden space.",
                 tag: "Space-Efficient",
               },
               {
                 icon: "💧",
                 title: "Hydroponic Growing",
-                desc: "Soil-free growing systems that deliver nutrients directly to plant roots through water. Uses up to 90% less water than conventional soil gardening — a critical advantage in Phoenix's desert climate.",
+                desc: "A soil-free growing method that uses significantly less water than traditional soil gardening — making it practical and sustainable in Phoenix's desert climate.",
                 tag: "Water-Smart",
               },
               {
                 icon: "📦",
                 title: "Modular Pilot Systems",
-                desc: "Our systems are designed to be modular and scalable — starting small at a single site, then expanding as partnerships grow. From a single tower in a classroom to a full installation at a community center.",
+                desc: "Each pilot system is designed to start small and grow alongside our community partnerships — practical and accessible from day one.",
                 tag: "Scalable",
               },
             ].map((item) => (
@@ -325,14 +326,15 @@ export default function SenseGardens() {
             ))}
           </div>
 
-          {/* Pilot visual placeholder */}
-          <div className="mt-12 rounded-2xl p-10 border-2 border-dashed border-gray-200 text-center">
-            <span className="text-4xl mb-4 block">📸</span>
-            <p className="font-bold text-gray-700 mb-2">Pilot Program Photos Coming Soon</p>
-            <p className="text-gray-400 text-sm max-w-md mx-auto">
-              As our first pilot sites launch, this space will feature real photos of our vertical and
-              hydroponic systems in action at Phoenix schools, community centers, and neighborhood sites.
-            </p>
+          {/* Our Approach image */}
+          <div className="mt-12 rounded-2xl overflow-hidden relative h-80">
+            <Image
+              src="/images/gardens/OurApproach.jpg"
+              alt="Our approach to urban community gardening"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
           </div>
         </div>
       </section>
@@ -353,11 +355,10 @@ export default function SenseGardens() {
               </p>
               <div className="space-y-5">
                 {[
-                  { icon: "💧", title: "Up to 90% less water", desc: "Closed-loop hydroponic systems recirculate water, using a fraction of what traditional gardens require — essential in a desert climate." },
-                  { icon: "📐", title: "Grows in smaller spaces", desc: "Vertical systems maximize production in tight urban footprints — a single tower can produce what a large ground plot would, in far less space." },
-                  { icon: "📈", title: "Higher production capacity", desc: "Stacking plants vertically dramatically increases yield per square foot, making it possible to grow more food in fewer square feet." },
-                  { icon: "✅", title: "Cleaner, controlled environment", desc: "Indoor and semi-indoor systems reduce exposure to pests, contamination, and weather — resulting in cleaner, more consistent harvests." },
-                  { icon: "🌵", title: "Built for Phoenix", desc: "Urban and desert environments like Phoenix are exactly where this model thrives — where traditional gardens struggle, vertical systems succeed." },
+                  { icon: "💧", title: "Reduced water use", desc: "Hydroponic systems use a fraction of the water traditional gardens require — a critical advantage in Phoenix and other desert communities." },
+                  { icon: "📐", title: "Better use of limited space", desc: "Vertical systems make fresh food possible in small urban footprints — schools, community centers, and neighborhood sites with no traditional garden space." },
+                  { icon: "✅", title: "Controlled, clean environment", desc: "Enclosed systems reduce exposure to pests, weather, and contamination — resulting in consistent, reliable growing year-round." },
+                  { icon: "🌵", title: "Built for urban and desert settings", desc: "This model is designed for environments like Phoenix — where space is limited and water is precious, but the need for fresh food is real." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
                     <span className="text-2xl shrink-0">{item.icon}</span>
@@ -370,30 +371,35 @@ export default function SenseGardens() {
               </div>
             </div>
 
-            {/* Visual placeholder */}
+            {/* Garden images */}
             <div className="space-y-4">
-              <div className="h-64 rounded-2xl flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #1B4332, #2D6A4F)" }}>
-                <div className="text-center text-white px-8">
-                  <span className="text-6xl mb-3 block">🌿</span>
-                  <p className="font-bold text-lg">Vertical Growing Tower</p>
-                  <p className="text-green-200 text-sm mt-1">Image placeholder — pilot photo coming soon</p>
-                </div>
+              <div className="relative h-64 rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/gardens/garden-small-scale.jpg"
+                  alt="Small-scale vertical garden system"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 600px"
+                />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="h-40 rounded-xl flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #52B788, #74C69D)" }}>
-                  <div className="text-center text-white px-4">
-                    <span className="text-4xl mb-1 block">💧</span>
-                    <p className="text-sm font-bold">Hydroponic System</p>
-                  </div>
+                <div className="relative h-40 rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/gardens/garden-hydroponic.jpg"
+                    alt="Hydroponic garden system"
+                    fill
+                    className="object-cover"
+                    sizes="300px"
+                  />
                 </div>
-                <div className="h-40 rounded-xl flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #2D6A4F, #52B788)" }}>
-                  <div className="text-center text-white px-4">
-                    <span className="text-4xl mb-1 block">🏫</span>
-                    <p className="text-sm font-bold">School Site Setup</p>
-                  </div>
+                <div className="relative h-40 rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/gardens/garden-future-model.jpg"
+                    alt="Community garden installation"
+                    fill
+                    className="object-cover"
+                    sizes="300px"
+                  />
                 </div>
               </div>
             </div>
@@ -638,7 +644,7 @@ export default function SenseGardens() {
             <h3 className="font-serif text-2xl font-bold text-gray-900 mb-3">Sponsor a Pilot Site</h3>
             <p className="text-gray-500 leading-relaxed mb-6">
               Partner with us to sponsor a pilot garden installation at a school, community center, or
-              neighborhood site. Includes naming recognition, volunteer opportunities, and impact reporting.
+              neighborhood site in Phoenix. Let's start a conversation about how we can work together.
             </p>
             <Link href="/get-involved#partner"
               className="inline-block px-6 py-3 rounded font-bold text-sm uppercase tracking-wide border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">

@@ -11,7 +11,7 @@ export default function GetInvolved() {
     <div>
 
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-end pb-20 overflow-hidden"
+      <section className="relative flex items-end pb-24 overflow-hidden"
         style={{ background: "linear-gradient(135deg, #1B4332 0%, #1A1A1A 100%)" }}>
         <div className="absolute inset-0 opacity-5"
           style={{
@@ -55,10 +55,25 @@ export default function GetInvolved() {
             <h2 className="font-serif text-display-lg text-slf-charcoal mb-6">
               Your gift changes lives.
             </h2>
-            <p className="text-gray-500 leading-relaxed mb-8 text-lg">
+            <p className="text-gray-500 leading-relaxed mb-6 text-lg">
               Every dollar goes directly to developing Financial Sense programming and launching
-              Sense Gardens pilot sites. We are a 501(c)(3) — your gift is fully tax-deductible.
+              Sense Gardens pilot sites in Phoenix. Your gift is fully tax-deductible.
             </p>
+
+            {/* Trust signals */}
+            <div className="flex flex-wrap gap-4 mb-8 p-4 rounded-xl bg-white border border-gray-100">
+              {[
+                "501(c)(3) Registered Nonprofit",
+                "EIN: 99-2323968",
+                "Candid Silver Transparency",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-xs text-gray-500">
+                  <span className="w-4 h-4 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
+                    style={{ background: "#2D6A4F" }}>✓</span>
+                  <span className="font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
             {/* Impact breakdown — Feeding America "$1=10 meals" style */}
             <div className="space-y-4 mb-8">
               {[
@@ -80,7 +95,7 @@ export default function GetInvolved() {
               </a>
             </div>
             <p className="text-xs text-gray-400 mt-4">
-              100% of your donation funds programs directly. EIN: XX-XXXXXXX
+              Sensible Living Foundation is a registered 501(c)(3) nonprofit. EIN: 99-2323968.
             </p>
           </div>
 
@@ -193,96 +208,67 @@ export default function GetInvolved() {
               {
                 icon: "🏫",
                 title: "Schools & School Districts",
-                desc: "Bring innovative, space-efficient vertical gardens to school campuses. We support nutrition and wellness education, STEM-based curriculum connected to garden learning, and hands-on experiences for students and teachers.",
-                examples: ["Vertical garden installations on campus", "Nutrition & wellness curriculum", "STEM-connected garden learning", "Teacher & student programming"],
+                desc: "Bring garden education and wellness programming to your campus. We'd love to explore how our programs can support your students, teachers, and community.",
               },
               {
                 icon: "🏘️",
                 title: "Community Centers & Youth-Serving Organizations",
-                desc: "Partner with us to bring garden education and financial literacy to the communities you already serve. We align with organizations that work where the need is greatest.",
-                examples: ["Boys & Girls Clubs", "After-school programs", "Family resource centers", "Neighborhood centers"],
+                desc: "We align with organizations already working where the need is greatest. Let's talk about how our programs can support the communities you serve.",
               },
               {
                 icon: "🏢",
                 title: "Employers & Corporate Teams",
-                desc: "Create real community impact through your organization. From employee volunteer days to program sponsorships, we make it easy for companies to invest in the communities where their people live and work.",
-                examples: ["Employee volunteer days", "Garden or program sponsorship", "Wellness & financial wellness partnerships", "Collaborative community impact days"],
+                desc: "Create meaningful community impact through your organization. We make it easy for companies to invest in the communities where their people live and work.",
               },
               {
                 icon: "🤝",
-                title: "Individuals & Families",
-                desc: "You don't have to be a company to make a difference. There are meaningful ways for individuals to support the mission locally — on any budget.",
-                examples: ["Sponsor a garden bench or learning station", "Donate supplies or materials", "Host a community fundraiser", "Connect us to your network or neighborhood"],
+                title: "Individuals, Families & Sponsors",
+                desc: "You don't have to be a company to make a difference. There are meaningful ways to support the mission — on any budget and at any level.",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors bg-white/5">
+              <div key={item.title} className="rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors bg-white/5 flex flex-col">
                 <span className="text-4xl mb-5 block">{item.icon}</span>
                 <h3 className="font-display font-bold text-white text-xl mb-3">{item.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-5">{item.desc}</p>
-                <ul className="space-y-2">
-                  {item.examples.map((ex) => (
-                    <li key={ex} className="flex items-start gap-2 text-gray-400 text-sm">
-                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-yellow-400 shrink-0" />
-                      {ex}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-1">{item.desc}</p>
+                <a href="mailto:partnerships@sensiblelivingfoundation.org"
+                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-colors"
+                  style={{ color: "#FFCA0A" }}>
+                  Let's Connect →
+                </a>
               </div>
             ))}
           </div>
 
-          {/* Sponsorship Opportunities */}
+          {/* Ways to Support */}
           <div className="mb-16">
-            <h3 className="font-serif text-2xl text-white text-center mb-10">Sponsorship & Support Opportunities</h3>
+            <h3 className="font-serif text-2xl text-white text-center mb-10">Ways to Support</h3>
             <div className="grid md:grid-cols-3 gap-5">
               {[
-                {
-                  icon: "🏅",
-                  title: "Corporate Sponsorship",
-                  desc: "Sponsor a program, garden, or event. Receive naming recognition, quarterly impact reports, and employee engagement opportunities.",
-                },
-                {
-                  icon: "🪑",
-                  title: "Naming Opportunities",
-                  desc: "Put your name — or honor someone — on a garden bench, seating area, learning station, or program space.",
-                },
-                {
-                  icon: "🌱",
-                  title: "Pilot Program Sponsorship",
-                  desc: "Directly fund the launch of a pilot garden site at a school, community center, or neighborhood location.",
-                },
-                {
-                  icon: "📦",
-                  title: "In-Kind Support",
-                  desc: "Donate supplies, materials, tools, equipment, or professional services that support our programs and operations.",
-                },
-                {
-                  icon: "🎓",
-                  title: "Educational Partnerships",
-                  desc: "Co-develop curriculum, share resources, or collaborate on programming that connects food, finance, and community wellness.",
-                },
-                {
-                  icon: "💻",
-                  title: "Community Webinars",
-                  desc: "Host or co-sponsor community-based webinars on financial literacy, nutrition, or urban food systems — reaching families where they are.",
-                },
+                { icon: "🏅", title: "Corporate Sponsorship" },
+                { icon: "🌱", title: "Pilot Program Sponsorship" },
+                { icon: "📦", title: "In-Kind Support" },
+                { icon: "🎓", title: "Educational Partnerships" },
+                { icon: "💻", title: "Community Webinars" },
+                { icon: "🪑", title: "Naming Opportunities" },
               ].map((item) => (
-                <div key={item.title} className="rounded-xl p-6 border border-white/10 hover:border-yellow-400/40 transition-colors">
-                  <span className="text-3xl mb-4 block">{item.icon}</span>
-                  <h4 className="font-display font-bold text-white mb-2">{item.title}</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                <div key={item.title} className="rounded-xl p-6 border border-white/10 hover:border-yellow-400/40 transition-colors flex items-center gap-4">
+                  <span className="text-3xl shrink-0">{item.icon}</span>
+                  <h4 className="font-display font-bold text-white">{item.title}</h4>
                 </div>
               ))}
             </div>
+            <p className="text-center text-gray-400 text-sm mt-6">
+              Interested in any of these? Reach out and we'll share the details.
+            </p>
           </div>
 
           {/* CTA */}
           <div className="text-center">
             <p className="text-gray-300 mb-6 text-lg">
-              Ready to explore a partnership? We'd love to connect.
+              Ready to start a conversation? We'd love to connect.
             </p>
             <a href="mailto:partnerships@sensiblelivingfoundation.org" className="btn-yellow">
-              Contact Us About Partnerships →
+              Reach Out About Partnerships →
             </a>
           </div>
 
