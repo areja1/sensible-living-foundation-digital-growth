@@ -5,6 +5,13 @@ import Image from "next/image";
 
 const impactCategories = ["Health", "Education", "Community", "Environment"];
 
+const impactImages: Record<string, { src: string; alt: string }> = {
+  Health:      { src: "/images/community/com_1.jpeg", alt: "Community members preparing fresh food in a shared kitchen space" },
+  Education:   { src: "/images/community/com_3.jpeg", alt: "People learning in an indoor hydroponic growing facility" },
+  Community:   { src: "/images/community/com_2.jpeg", alt: "Community members working together in an outdoor vertical garden" },
+  Environment: { src: "/images/community/com_4.jpeg", alt: "Vertical hydroponic tower growing systems" },
+};
+
 const impactContent: Record<string, { stat: string; headline: string; desc: string }> = {
   Health: {
     stat: "Goal",
@@ -212,7 +219,7 @@ export default function SenseGardens() {
                 desc: "Improved health, stronger communities, and the capacity to pass opportunity to the next generation.",
                 items: ["Long-term health outcomes", "Economic food savings", "Generational impact", "Community resilience"],
                 delay: "0.3s",
-                accentColor: "#74C69D",
+                accentColor: "#E1251B",
                 floatAnim: "floatC 8s ease-in-out infinite",
               },
             ].map((item) => (
@@ -375,8 +382,8 @@ export default function SenseGardens() {
             <div className="space-y-4">
               <div className="relative h-64 rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/gardens/garden-small-scale.jpg"
-                  alt="Small-scale vertical garden system"
+                  src="/images/gardens/gard_1.jpeg"
+                  alt="Indoor vertical hydroponic tower garden with colorful produce"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 600px"
@@ -385,8 +392,8 @@ export default function SenseGardens() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-40 rounded-xl overflow-hidden">
                   <Image
-                    src="/images/gardens/garden-hydroponic.jpg"
-                    alt="Hydroponic garden system"
+                    src="/images/gardens/gard_3.jpeg"
+                    alt="Large-scale indoor vertical garden facility with tower growing systems"
                     fill
                     className="object-cover"
                     sizes="300px"
@@ -394,8 +401,8 @@ export default function SenseGardens() {
                 </div>
                 <div className="relative h-40 rounded-xl overflow-hidden">
                   <Image
-                    src="/images/gardens/garden-future-model.jpg"
-                    alt="Community garden installation"
+                    src="/images/gardens/gard_2.jpeg"
+                    alt="Indoor hydroponic shelving system with seedlings under grow lights"
                     fill
                     className="object-cover"
                     sizes="300px"
@@ -441,9 +448,14 @@ export default function SenseGardens() {
                 {impactContent[activeCategory].desc}
               </p>
             </div>
-            <div className="h-72 rounded-2xl flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #2D6A4F, #52B788)" }}>
-              <span className="text-9xl">🌱</span>
+            <div className="relative h-72 rounded-2xl overflow-hidden">
+              <Image
+                src={impactImages[activeCategory].src}
+                alt={impactImages[activeCategory].alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 500px"
+              />
             </div>
           </div>
         </div>
@@ -508,54 +520,131 @@ export default function SenseGardens() {
       {/* Food & Meal Inspiration */}
       <section className="py-24" style={{ background: "#FAF7F0" }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-400">From Garden to Table</span>
-              <h2 className="font-serif text-4xl font-extrabold text-gray-900 mt-3 mb-6">
-                Healthy meals families will actually enjoy.
-              </h2>
-              <p className="text-gray-500 leading-relaxed mb-6">
-                Growing fresh food is just the beginning. We want to help families turn that produce into
-                colorful, flavorful, nourishing meals — using accessible ingredients and simple recipes
-                that fit real life.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                We are building a library of plant-based meal inspiration tied directly to the produce
-                our gardens grow and promote — with a focus on meals that are affordable, easy to prepare,
-                and genuinely delicious.
-              </p>
-              <div className="flex flex-wrap gap-3 mb-6">
-                {["Leafy Greens", "Herbs", "Tomatoes", "Peppers", "Microgreens", "Root Vegetables"].map((item) => (
-                  <span key={item}
-                    className="px-4 py-2 rounded-full text-sm font-semibold border border-green-200 text-green-800 bg-green-50">
-                    {item}
-                  </span>
-                ))}
+
+          {/* Header */}
+          <div className="mb-14">
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">From Garden to Table</span>
+            <h2 className="font-serif text-4xl font-extrabold text-gray-900 mt-3 mb-4">
+              Healthy meals families will actually make.
+            </h2>
+            <p className="text-gray-500 leading-relaxed max-w-2xl text-lg">
+              Fresh produce from the garden is just the starting point. These ideas are designed
+              to be practical, budget-friendly, and easy to prepare — real meals for real life.
+            </p>
+          </div>
+
+          {/* 4 Category Cards */}
+          <div className="grid md:grid-cols-2 gap-6">
+
+            {/* Salads & Bowls */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-3xl">🥬</span>
+                <h3 className="font-serif text-xl font-bold text-gray-900">Fresh Meal-Prep Salads & Bowls</h3>
               </div>
-              <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold"
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Mixed greens with cucumber, tomato, and a simple lemon-olive oil dressing",
+                  "Grain bowl with brown rice, roasted peppers, and fresh herbs",
+                  "Chopped kale salad with shredded carrots, sunflower seeds, and apple cider vinaigrette",
+                ].map((idea) => (
+                  <li key={idea} className="flex items-start gap-2 text-sm text-gray-600">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#2D6A4F" }} />
+                    {idea}
+                  </li>
+                ))}
+              </ul>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
                 style={{ background: "#D8F3DC", color: "#1B4332" }}>
-                <span>🍽️</span>
-                <span>Meal inspiration resources coming soon</span>
+                <span>🍽️</span> Full recipes coming soon
               </div>
             </div>
 
-            {/* Placeholder cards */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { emoji: "🥬", label: "Fresh Salads & Bowls" },
-                { emoji: "🍲", label: "Hearty Plant-Based Meals" },
-                { emoji: "🥑", label: "Nutritious Snacks" },
-                { emoji: "🧃", label: "Smoothies & Juices" },
-              ].map((item) => (
-                <div key={item.label}
-                  className="h-44 rounded-2xl flex flex-col items-center justify-center border-2 border-dashed border-gray-200 bg-white hover:border-green-300 transition-colors p-4 text-center">
-                  <span className="text-4xl mb-3">{item.emoji}</span>
-                  <p className="text-sm font-bold text-gray-600">{item.label}</p>
-                  <p className="text-xs text-gray-400 mt-1">Recipe ideas coming soon</p>
-                </div>
-              ))}
+            {/* Plant-Based Meals */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-3xl">🍲</span>
+                <h3 className="font-serif text-xl font-bold text-gray-900">Healthy Plant-Based Meals</h3>
+              </div>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Stir-fried greens and peppers over brown rice — ready in under 20 minutes",
+                  "Lentil and tomato soup with garden herbs — filling, affordable, and freezer-friendly",
+                  "Stuffed bell peppers with seasoned beans, rice, and fresh herbs",
+                ].map((idea) => (
+                  <li key={idea} className="flex items-start gap-2 text-sm text-gray-600">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#2D6A4F" }} />
+                    {idea}
+                  </li>
+                ))}
+              </ul>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+                style={{ background: "#D8F3DC", color: "#1B4332" }}>
+                <span>🍽️</span> Full recipes coming soon
+              </div>
             </div>
+
+            {/* Nutritious Snacks */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-3xl">🥕</span>
+                <h3 className="font-serif text-xl font-bold text-gray-900">Nutritious Snacks</h3>
+              </div>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Sliced cucumber and cherry tomatoes with hummus — no cooking required",
+                  "Celery and carrot sticks with peanut butter — a budget-friendly staple",
+                  "Fresh herb and tomato bruschetta on whole grain bread",
+                ].map((idea) => (
+                  <li key={idea} className="flex items-start gap-2 text-sm text-gray-600">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#2D6A4F" }} />
+                    {idea}
+                  </li>
+                ))}
+              </ul>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+                style={{ background: "#D8F3DC", color: "#1B4332" }}>
+                <span>🍽️</span> Full recipes coming soon
+              </div>
+            </div>
+
+            {/* Smoothies & Juices */}
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-3xl">🧃</span>
+                <h3 className="font-serif text-xl font-bold text-gray-900">Smoothies & Juices</h3>
+              </div>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Spinach, banana, and frozen berry smoothie — nutritious and under $1 per serving",
+                  "Cucumber and fresh mint cooler — refreshing, hydrating, zero added sugar",
+                  "Kale, apple, and ginger green smoothie — simple ingredients, big nutrition",
+                ].map((idea) => (
+                  <li key={idea} className="flex items-start gap-2 text-sm text-gray-600">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#2D6A4F" }} />
+                    {idea}
+                  </li>
+                ))}
+              </ul>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
+                style={{ background: "#D8F3DC", color: "#1B4332" }}>
+                <span>🍽️</span> Full recipes coming soon
+              </div>
+            </div>
+
           </div>
+
+          {/* Produce grown in our gardens */}
+          <div className="mt-10 flex flex-wrap gap-3 items-center">
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Grown in our gardens:</span>
+            {["Leafy Greens", "Herbs", "Tomatoes", "Peppers", "Microgreens", "Cucumbers"].map((item) => (
+              <span key={item}
+                className="px-4 py-2 rounded-full text-sm font-semibold border border-green-200 text-green-800 bg-green-50">
+                {item}
+              </span>
+            ))}
+          </div>
+
         </div>
       </section>
 

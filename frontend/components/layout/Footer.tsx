@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const socials = [
   {
@@ -69,15 +70,14 @@ export default function Footer() {
 
           {/* Brand + newsletter */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-                style={{ background: "#1B4332" }}>
-                SLF
-              </div>
-              <div>
-                <p className="font-display font-bold text-sm text-white">Sensible Living Foundation</p>
-                <p className="text-gray-500 text-xs">501(c)(3) Nonprofit</p>
-              </div>
+            <div className="flex items-center mb-5">
+              <Image
+                src="/images/logo/logo-primary.svg"
+                alt="Sensible Living Foundation"
+                width={120}
+                height={48}
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
               Improving wealth and health outcomes in underserved communities through

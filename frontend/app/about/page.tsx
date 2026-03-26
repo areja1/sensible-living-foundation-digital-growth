@@ -115,9 +115,9 @@ export default function About() {
 
               <blockquote className="text-gray-700 text-2xl font-serif leading-relaxed italic"
                 style={{ borderLeft: "4px solid #FFCA0A", paddingLeft: "1.5rem" }}>
-                "I didn't learn about money from a classroom. I learned it from watching my family
-                stretch every dollar just to get through the week — and wondering why nobody ever
-                taught us the rules of a game we were already losing."
+                "Looking back, I did not learn about money in a classroom. I learned it by watching
+                my family struggle at times and wondering why no one had taught us the rules to this
+                game called life."
               </blockquote>
 
               <p className="text-gray-600 leading-relaxed text-lg">
@@ -261,199 +261,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Deep dive — full three pillars */}
-        <div className="relative z-10">
-
-          {/* EDUCATE */}
-          <div className="py-20 border-t border-white/5" style={{ background: "rgba(82,183,136,0.05)" }}>
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="grid md:grid-cols-2 gap-16 items-start">
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center font-serif font-extrabold text-3xl"
-                      style={{ background: "#52B788", color: "#fff" }}>E</div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#52B788" }}>Pillar One</p>
-                      <h3 className="font-serif text-4xl font-extrabold text-white">Educate</h3>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                    Lasting change starts with knowledge. We provide practical, accessible education
-                    that meets people where they are — no jargon, no barriers, no prerequisites.
-                  </p>
-                  <p className="text-gray-500 leading-relaxed mb-8">
-                    Whether it is understanding how to build a budget, learning what grows in a
-                    hydroponic system, or discovering how credit actually works — our education is
-                    grounded in real life and immediately usable.
-                  </p>
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      "Financial literacy fundamentals",
-                      "Budgeting and money management",
-                      "Nutrition and food system education",
-                      "Vertical and hydroponic garden learning",
-                      "Credit and debt education",
-                      "Hands-on workshops and demonstrations",
-                    ].map((item) => (
-                      <div key={item} className="flex items-start gap-2 text-sm text-gray-400">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#52B788" }} />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="rounded-2xl p-8" style={{ background: "rgba(82,183,136,0.08)", border: "1px solid rgba(82,183,136,0.2)" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#52B788" }}>In Financial Sense</p>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Participants move through 101 → 202 → 303 curriculum stages covering budgeting,
-                      savings, debt reduction, credit building, and long-term financial planning — each
-                      module built on the last.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl p-8" style={{ background: "rgba(82,183,136,0.08)", border: "1px solid rgba(82,183,136,0.2)" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#52B788" }}>In Sense Gardens</p>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Participants learn how hydroponic and vertical garden systems work, how to grow
-                      and harvest produce, and how fresh food connects directly to long-term personal health.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl p-6 text-center" style={{ background: "rgba(82,183,136,0.05)", border: "1px dashed rgba(82,183,136,0.2)" }}>
-                    <p className="font-serif text-3xl font-bold text-white mb-1">Knowledge</p>
-                    <p className="text-sm" style={{ color: "#52B788" }}>is the foundation everything else is built on</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* EMPOWER */}
-          <div className="py-20 border-t border-white/5" style={{ background: "rgba(255,202,10,0.04)" }}>
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="grid md:grid-cols-2 gap-16 items-start">
-                <div className="order-2 md:order-1 space-y-4">
-                  <div className="rounded-2xl p-8" style={{ background: "rgba(255,202,10,0.08)", border: "1px solid rgba(255,202,10,0.2)" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#FFCA0A" }}>In Financial Sense</p>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Homework assignments, accountability buddy features, progress tracking, and community
-                      cohorts turn passive learning into active transformation — building the habits that
-                      make financial knowledge stick.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl p-8" style={{ background: "rgba(255,202,10,0.08)", border: "1px solid rgba(255,202,10,0.2)" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#FFCA0A" }}>In Sense Gardens</p>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Volunteers and participants don't just observe — they set up systems, maintain
-                      equipment, assist with harvest, and take ownership of community garden spaces.
-                      Access to fresh food becomes something they helped create.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl p-6 text-center" style={{ background: "rgba(255,202,10,0.05)", border: "1px dashed rgba(255,202,10,0.2)" }}>
-                    <p className="font-serif text-3xl font-bold text-white mb-1">Action</p>
-                    <p className="text-sm" style={{ color: "#FFCA0A" }}>turns knowledge into lived experience</p>
-                  </div>
-                </div>
-                <div className="order-1 md:order-2">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center font-serif font-extrabold text-3xl"
-                      style={{ background: "#FFCA0A", color: "#1A1A1A" }}>E</div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#FFCA0A" }}>Pillar Two</p>
-                      <h3 className="font-serif text-4xl font-extrabold text-white">Empower</h3>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                    Knowledge alone is not enough. Empowerment means giving people the confidence,
-                    the resources, the community, and the structure to actually act on what they have learned.
-                  </p>
-                  <p className="text-gray-500 leading-relaxed mb-8">
-                    We build systems — not just sessions. Accountability, peer support, practical tools,
-                    and ongoing access to resources are built directly into our programs so that no one
-                    has to navigate change alone.
-                  </p>
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      "Accountability buddy system",
-                      "Peer cohort community",
-                      "Practical homework and action steps",
-                      "Progress milestones and tracking",
-                      "Fresh food access and agency",
-                      "Community ownership of resources",
-                    ].map((item) => (
-                      <div key={item} className="flex items-start gap-2 text-sm text-gray-400">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#FFCA0A" }} />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ELEVATE */}
-          <div className="py-20 border-t border-white/5" style={{ background: "rgba(225,37,27,0.04)" }}>
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="grid md:grid-cols-2 gap-16 items-start">
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center font-serif font-extrabold text-3xl"
-                      style={{ background: "#E1251B", color: "#fff" }}>E</div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#E1251B" }}>Pillar Three</p>
-                      <h3 className="font-serif text-4xl font-extrabold text-white">Elevate</h3>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                    Elevation is the outcome we are building toward — a measurable, lasting improvement
-                    in the lives of individuals, families, and the communities they live in.
-                  </p>
-                  <p className="text-gray-500 leading-relaxed mb-8">
-                    Not a one-time event. Not a statistic. A real shift in financial stability, health,
-                    opportunity, and the ability to pass something better on to the next generation.
-                  </p>
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      "Improved credit and financial literacy",
-                      "Reduced debt and increased savings",
-                      "Better nutrition and physical health",
-                      "Stronger community connections",
-                      "Economic mobility over time",
-                      "Generational impact on families",
-                    ].map((item) => (
-                      <div key={item} className="flex items-start gap-2 text-sm text-gray-400">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#E1251B" }} />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="rounded-2xl p-8" style={{ background: "rgba(225,37,27,0.08)", border: "1px solid rgba(225,37,27,0.2)" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#E1251B" }}>In Financial Sense</p>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      By completing 101 → 202 → 303, participants emerge with improved budgeting habits,
-                      reduced debt, stronger credit, and a certificate of completion — and the confidence
-                      to keep building from there.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl p-8" style={{ background: "rgba(225,37,27,0.08)", border: "1px solid rgba(225,37,27,0.2)" }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#E1251B" }}>In Sense Gardens</p>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      Families gain access to fresh food, reduce grocery spending, improve their diet,
-                      and connect to a broader community of people working toward the same healthier future.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl p-6 text-center" style={{ background: "rgba(225,37,27,0.05)", border: "1px dashed rgba(225,37,27,0.2)" }}>
-                    <p className="font-serif text-3xl font-bold text-white mb-1">Transformation</p>
-                    <p className="text-sm" style={{ color: "#E1251B" }}>is the only outcome that lasts</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Closing statement */}
         <div className="py-20 border-t border-white/5 relative z-10">
           <div className="max-w-4xl mx-auto px-6 text-center">
@@ -545,7 +352,7 @@ export default function About() {
               {[
                 { icon: "🏗️", label: "Building the Organization", desc: "501(c)(3) structure, governance, and operations" },
                 { icon: "🌱", label: "Developing Pilot Programs", desc: "Designing first Sense Garden sites in Phoenix" },
-                { icon: "📚", label: "Refining Curriculum", desc: "101/202/303 Financial Sense program in development" },
+                { icon: "📚", label: "Refining Curriculum", desc: "Financial Sense curriculum in development" },
                 { icon: "🤝", label: "Creating Partnerships", desc: "Schools, community centers, and corporate allies" },
                 { icon: "🚀", label: "Launching Early Models", desc: "Testing what works before we scale" },
               ].map((item) => (
@@ -588,7 +395,7 @@ export default function About() {
                     {
                       phase: "2027–2028",
                       title: "Larger Community Installations",
-                      desc: "Scaling from single units to multi-tower systems serving entire neighborhoods.",
+                      desc: "Growing our presence to serve entire neighborhoods across Phoenix.",
                       color: "#52B788",
                       active: false,
                     },
@@ -621,7 +428,7 @@ export default function About() {
             <div className="rounded-2xl overflow-hidden border border-white/10">
               <div className="px-8 pt-8 pb-6" style={{ background: "rgba(6,32,92,0.4)" }}>
                 <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#6B8DD6" }}>Financial Sense</p>
-                <h3 className="font-serif text-2xl font-bold text-white">From basic portal to adaptive learning platform.</h3>
+                <h3 className="font-serif text-2xl font-bold text-white">From our first programs to a growing national platform.</h3>
               </div>
               <div className="px-8 pb-8" style={{ background: "rgba(6,32,92,0.15)" }}>
                 <div className="space-y-0 mt-2">
@@ -629,28 +436,28 @@ export default function About() {
                     {
                       phase: "Now",
                       title: "Core Learning Portal",
-                      desc: "Building the 101/202/303 curriculum, intake process, and accountability buddy framework.",
+                      desc: "Launching our first Financial Sense programs and building the foundation for what comes next.",
                       color: "#6B8DD6",
                       active: true,
                     },
                     {
                       phase: "2026–2027",
-                      title: "Adaptive & Personalized Learning",
-                      desc: "Tailoring curriculum paths based on intake assessments and individual financial situations.",
+                      title: "Deeper Reach & Personalized Support",
+                      desc: "Expanding access and tailoring our support to meet participants where they are.",
                       color: "#6B8DD6",
                       active: false,
                     },
                     {
                       phase: "2027–2028",
-                      title: "Stronger Partner Integrations",
-                      desc: "Connecting participants to banking tools, credit-building resources, and financial services partners.",
+                      title: "Broader Partnerships",
+                      desc: "Expanding partnerships to extend the resources available to our participants.",
                       color: "#6B8DD6",
                       active: false,
                     },
                     {
                       phase: "2028–2030",
-                      title: "Measurable Readiness Milestones",
-                      desc: "Trackable outcomes — credit improvement, savings growth, debt reduction — tied to certificate completion.",
+                      title: "Measurable Graduate Outcomes",
+                      desc: "Celebrating real, lasting financial progress for every program graduate.",
                       color: "#6B8DD6",
                       active: false,
                     },
@@ -677,8 +484,8 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { goal: "3+ Pilots",       timeline: "2026",    desc: "Vertical garden pilot sites launching in Phoenix", color: "#52B788" },
-              { goal: "50+ Gardens",     timeline: "By 2028", desc: "Across multiple Phoenix neighborhoods and partner sites", color: "#FFCA0A" },
-              { goal: "National Model",  timeline: "By 2030", desc: "A replicable blueprint every city can adopt", color: "#E1251B" },
+              { goal: "40+ Gardens",     timeline: "By 2029", desc: "Across multiple Phoenix neighborhoods and partner sites", color: "#FFCA0A" },
+              { goal: "National Model",  timeline: "By 2031", desc: "A replicable blueprint every city can adopt", color: "#E1251B" },
             ].map((item) => (
               <div key={item.goal} className="rounded-xl p-8 border border-white/10 text-center"
                 style={{ background: "rgba(255,255,255,0.03)" }}>

@@ -117,10 +117,10 @@ export default function Home() {
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center">
           {[
-            { n: "3+",       label: "Pilot Garden Sites", sub: "planned in Phoenix" },
-            { n: "150+",     label: "Families to Reach", sub: "by end of 2026" },
-            { n: "2023",     label: "Founded", sub: "programs beginning now" },
-            { n: "No Cost",  label: "To Participants", sub: "always and forever" },
+            { n: "10+",       label: "Pilot Locations",     sub: "by 2027" },
+            { n: "40+",       label: "Gardens",             sub: "by 2029" },
+            { n: "2031",      label: "National Model",      sub: "projected milestone" },
+            { n: "4,000 lbs", label: "Projected Yield",     sub: "target — not yet achieved" },
           ].map((s) => (
             <div key={s.label} className="py-8 px-6">
               <p className="stat-number text-5xl mb-2" style={{ color: "#1B4332" }}>{s.n}</p>

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const socials = [
   {
@@ -67,21 +68,15 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between py-4">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div
-            className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
-            style={{ background: "#1B4332" }}
-          >
-            SLF
-          </div>
-          <div className="leading-tight">
-            <p className={`font-display font-bold text-sm transition-colors ${scrolled ? "text-slf-charcoal" : "text-white"}`}>
-              Sensible Living
-            </p>
-            <p className={`text-xs transition-colors ${scrolled ? "text-gray-400" : "text-white/60"}`}>
-              Foundation
-            </p>
-          </div>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/images/logo/logo-primary.svg"
+            alt="Sensible Living Foundation"
+            width={120}
+            height={48}
+            className="h-12 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

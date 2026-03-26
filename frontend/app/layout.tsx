@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Sensible Living Foundation",
   description:
     "Improving wealth and health outcomes in underserved communities through Financial Sense and Sense Gardens.",
+  icons: {
+    icon: "/images/logo/logo-primary.svg",
+    shortcut: "/images/logo/logo-primary.svg",
+    apple: "/images/logo/logo-primary.svg",
+  },
 };
 
 export default function RootLayout({

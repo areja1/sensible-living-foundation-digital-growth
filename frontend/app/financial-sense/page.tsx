@@ -1,70 +1,12 @@
 "use client";
-import { useState } from "react";
+
 import Link from "next/link";
 
-// Operation HOPE inspired — dark blue + red CTAs + program sub-categories + data sections
-
-const programs = [
-  {
-    title: "Credit & Money Management",
-    desc: "Learn how credit scores work, how to build or repair credit, and how to manage money with confidence.",
-    icon: "💳",
-  },
-  {
-    title: "Budgeting & Saving",
-    desc: "Create a real budget, build an emergency fund, and start saving toward your financial goals.",
-    icon: "🏦",
-  },
-  {
-    title: "Homeownership Readiness",
-    desc: "Understand mortgages, down payments, and what it takes to become a first-time homeowner.",
-    icon: "🏠",
-  },
-  {
-    title: "Small Business Basics",
-    desc: "Learn how to start, fund, and manage a small business in your community.",
-    icon: "🏪",
-  },
-  {
-    title: "Youth Financial Education",
-    desc: "Age-appropriate financial literacy curriculum for students in middle and high school.",
-    icon: "🎓",
-  },
-  {
-    title: "Workplace Financial Wellness",
-    desc: "Employer-partnered financial wellness education delivered where people work — a future partnership model we are actively developing.",
-    icon: "💼",
-  },
-];
-
-const impactAreas = ["101 — Intro", "202 — Intermediate", "303 — Advanced", "Completion Goal"];
-
 export default function FinancialSense() {
-  const [activeImpact, setActiveImpact] = useState("101 — Intro");
-
-  const impactContent: Record<string, { stat: string; desc: string }> = {
-    "101 — Intro": {
-      stat: "101",
-      desc: "Our introductory level covers budgeting basics, understanding income and expenses, savings habits, banking fundamentals, debt awareness, and financial goal setting — the foundation every participant builds on.",
-    },
-    "202 — Intermediate": {
-      stat: "202",
-      desc: "Intermediate participants work through debt reduction strategy, credit building, emergency savings planning, and improving financial routines — moving from survival mode to intentional growth.",
-    },
-    "303 — Advanced": {
-      stat: "303",
-      desc: "Advanced participants focus on credit improvement, long-term savings growth, debt payoff strategy, and financial stability planning — building the habits and knowledge for lasting financial readiness.",
-    },
-    "Completion Goal": {
-      stat: "Goal",
-      desc: "By the end of 303, participants are working toward improved financial literacy, stronger budgeting habits, reduced debt, improved credit, and a certificate of completion from the Financial Sense Financial Readiness Program.",
-    },
-  };
-
   return (
     <div>
 
-      {/* Hero — Operation HOPE style: dark blue, bold mission, red CTA */}
+      {/* Hero — dark blue, bold mission, red CTA */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden"
         style={{ background: "linear-gradient(135deg, #06205C 0%, #182857 60%, #1a3a6b 100%)" }}>
         <div className="absolute inset-0 opacity-10"
@@ -83,6 +25,7 @@ export default function FinancialSense() {
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg">
               No-cost, practical financial literacy education for individuals, families,
               and communities who have been underserved by traditional financial systems.
+              Launching in Phoenix in 2026.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -111,7 +54,8 @@ export default function FinancialSense() {
               Be First to Enroll
             </h3>
             <p className="text-gray-500 text-sm mb-6">
-              Our Financial Sense program is launching in Phoenix in 2026. Join the interest list and we'll reach out when enrollment opens — always at no cost.
+              Our Financial Sense program is launching in Phoenix in 2026. Join the interest list and
+              we'll reach out when enrollment opens — always at no cost.
             </p>
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
@@ -124,14 +68,6 @@ export default function FinancialSense() {
                 className="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
               <input type="tel" placeholder="Phone Number (optional)"
                 className="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" />
-              <select className="w-full px-4 py-3 border border-gray-200 rounded text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-900">
-                <option value="">Area of Interest</option>
-                <option>Credit & Money Management</option>
-                <option>Budgeting & Saving</option>
-                <option>Homeownership Readiness</option>
-                <option>General Financial Literacy</option>
-                <option>Youth Financial Education</option>
-              </select>
               <button type="submit"
                 className="w-full py-4 text-white font-bold text-sm uppercase tracking-wide rounded transition-colors hover:opacity-90"
                 style={{ background: "#E1251B" }}>
@@ -145,14 +81,13 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* Impact Stats bar — Operation HOPE Financial Wellness Index style */}
+      {/* Simple program promise bar */}
       <section className="py-12" style={{ background: "#F3F4F4" }}>
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-6 text-center">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
           {[
-            { number: "3",       label: "Program Levels" },
-            { number: "101–303", label: "Curriculum Stages" },
-            { number: "9–12",    label: "Month Avg. Path" },
-            { number: "No Cost", label: "To All Participants" },
+            { number: "No Cost",     label: "To All Participants" },
+            { number: "2026",        label: "Launching in Phoenix" },
+            { number: "Guided",      label: "Structured Pathway — Beginner to Advanced" },
           ].map((s) => (
             <div key={s.label} className="py-6">
               <p className="font-serif text-4xl font-extrabold mb-1" style={{ color: "#06205C" }}>{s.number}</p>
@@ -162,7 +97,7 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* 3E Reference — Financial Sense themed */}
+      {/* 3E Model — core framework */}
       <section className="relative py-24 overflow-hidden" style={{ background: "#06205C" }}>
         <style>{`
           @keyframes fs-floatA { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-16px);} }
@@ -170,18 +105,13 @@ export default function FinancialSense() {
           @keyframes fs-floatC { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-20px);} }
           @keyframes fs-pulse  { 0%{transform:scale(1);opacity:0.35;} 100%{transform:scale(1.7);opacity:0;} }
           @keyframes fs-fadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
-          .fs-card:hover .fs-glow { opacity:1 !important; }
-          .fs-card:hover .fs-watermark { opacity:0.12 !important; }
         `}</style>
 
         {/* Background orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute rounded-full opacity-10" style={{ width:360,height:360,top:"-80px",left:"-80px", background:"radial-gradient(circle,#E1251B,transparent)", animation:"fs-floatA 9s ease-in-out infinite" }} />
           <div className="absolute rounded-full opacity-10" style={{ width:280,height:280,bottom:"-60px",right:"5%", background:"radial-gradient(circle,#4361EE,transparent)", animation:"fs-floatB 11s ease-in-out infinite" }} />
-          <div className="absolute rounded-full opacity-8"  style={{ width:200,height:200,top:"40%",right:"-40px", background:"radial-gradient(circle,#182857,transparent)", animation:"fs-floatC 7s ease-in-out infinite" }} />
         </div>
-
-        {/* Grid texture */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage:"radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)", backgroundSize:"36px 36px" }} />
 
         <div className="relative max-w-7xl mx-auto px-6">
@@ -209,16 +139,14 @@ export default function FinancialSense() {
                 label: "Educate",
                 tagline: "Knowledge that sticks",
                 desc: "Practical, no-jargon financial literacy — budgeting, credit, savings, debt — taught in a way that participants can apply the same day they learn it.",
-                items: ["101 / 202 / 303 curriculum", "Module-based learning", "Real financial concepts", "No barriers, no cost"],
-                accentColor: "#4ADE80",
+                accentColor: "#52B788",
                 delay: "0s",
                 float: "fs-floatA 10s ease-in-out infinite",
               },
               {
                 label: "Empower",
                 tagline: "Confidence through action",
-                desc: "Homework, accountability buddies, progress milestones, and peer community turn financial knowledge into real, lasting habits and personal agency.",
-                items: ["Action-based homework", "Accountability buddy system", "Progress tracking", "Peer cohort support"],
+                desc: "Accountability, peer community, and real-world practice turn financial knowledge into lasting habits and genuine personal agency.",
                 accentColor: "#FFCA0A",
                 delay: "0.15s",
                 float: "fs-floatB 12s ease-in-out infinite",
@@ -226,25 +154,18 @@ export default function FinancialSense() {
               {
                 label: "Elevate",
                 tagline: "Transformation that lasts",
-                desc: "By the end of the program, participants emerge with improved credit, reduced debt, stronger savings habits, and a certificate of financial readiness.",
-                items: ["Improved credit profile", "Reduced debt load", "Certificate of completion", "Generational impact"],
+                desc: "By the end of the program, participants emerge with improved credit, stronger savings habits, reduced debt, and a certificate of financial readiness.",
                 accentColor: "#E1251B",
                 delay: "0.3s",
                 float: "fs-floatC 8s ease-in-out infinite",
               },
             ].map((item) => (
               <div key={item.label}
-                className="fs-card relative rounded-2xl p-8 overflow-hidden cursor-default"
-                style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.08)", animation:`fs-fadeUp 0.6s ease ${item.delay} both`, transition:"border-color 0.3s, background 0.3s" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = item.accentColor; (e.currentTarget as HTMLElement).style.background="rgba(255,255,255,0.07)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor="rgba(255,255,255,0.08)"; (e.currentTarget as HTMLElement).style.background="rgba(255,255,255,0.04)"; }}>
-
-                {/* Glow */}
-                <div className="fs-glow absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-500"
-                  style={{ opacity:0, background:`radial-gradient(ellipse at 50% 0%, ${item.accentColor}25, transparent 65%)` }} />
+                className="relative rounded-2xl p-8 overflow-hidden"
+                style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.08)", animation:`fs-fadeUp 0.6s ease ${item.delay} both` }}>
 
                 {/* Floating E watermark */}
-                <div className="fs-watermark absolute -top-2 -right-2 font-serif font-extrabold select-none pointer-events-none transition-opacity duration-500"
+                <div className="absolute -top-2 -right-2 font-serif font-extrabold select-none pointer-events-none"
                   style={{ fontSize:"8rem", lineHeight:1, color:item.accentColor, opacity:0.06, animation:item.float }}>
                   E
                 </div>
@@ -260,16 +181,7 @@ export default function FinancialSense() {
 
                 <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color:item.accentColor }}>{item.tagline}</p>
                 <h3 className="font-serif text-2xl font-bold text-white mb-3">{item.label}</h3>
-                <p className="text-blue-200 text-sm leading-relaxed mb-6">{item.desc}</p>
-
-                <ul className="space-y-2">
-                  {item.items.map((ex) => (
-                    <li key={ex} className="flex items-center gap-2 text-sm text-blue-300">
-                      <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background:item.accentColor }} />
-                      {ex}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-blue-200 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -289,258 +201,77 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* Portal Concept + Intake */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: "#E1251B" }}>
-                Coming Soon
-              </span>
-              <h2 className="font-serif text-4xl font-extrabold leading-tight mb-6" style={{ color: "#06205C" }}>
-                Financial Sense is becoming an online learning portal.
-              </h2>
-              <p className="text-gray-600 leading-relaxed text-lg mb-5">
-                We are building a structured online platform where participants can enroll, complete
-                learning modules at their own pace, track their progress, and work through real financial
-                milestones — all at no cost.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                The portal will start simple and grow more personalized and adaptive over time —
-                meeting participants where they are and guiding them toward lasting financial readiness.
-              </p>
-              <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold"
-                style={{ background: "#EEF2FF", color: "#06205C" }}>
-                <span>🖥️</span>
-                <span>Portal in development — join the interest list below</span>
-              </div>
-            </div>
-            {/* Portal mockup placeholder */}
-            <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-lg">
-              <div className="px-5 py-3 flex items-center gap-2 border-b border-gray-100" style={{ background: "#F3F4F4" }}>
-                <span className="w-3 h-3 rounded-full bg-red-300" />
-                <span className="w-3 h-3 rounded-full bg-yellow-300" />
-                <span className="w-3 h-3 rounded-full bg-green-300" />
-                <span className="ml-3 text-xs text-gray-400 font-mono">portal.financialsense.org</span>
-              </div>
-              <div className="p-8" style={{ background: "#06205C" }}>
-                <p className="text-blue-300 text-xs font-bold uppercase tracking-widest mb-2">My Dashboard</p>
-                <p className="text-white font-bold text-lg mb-4">Welcome back — your journey continues.</p>
-                <div className="space-y-3">
-                  {[
-                    { label: "101 — Budgeting Basics", progress: 100, done: true },
-                    { label: "101 — Savings Habits", progress: 75, done: false },
-                    { label: "202 — Credit Building", progress: 0, done: false },
-                  ].map((item) => (
-                    <div key={item.label} className="bg-white/10 rounded-lg p-3">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-white text-xs font-semibold">{item.label}</span>
-                        <span className="text-xs" style={{ color: item.done ? "#52B788" : "#FFCA0A" }}>
-                          {item.done ? "✓ Complete" : `${item.progress}%`}
-                        </span>
-                      </div>
-                      <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
-                        <div className="h-full rounded-full transition-all"
-                          style={{ width: `${item.progress}%`, background: item.done ? "#52B788" : "#FFCA0A" }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-blue-300 text-xs mt-5 text-center">Portal design preview — not yet live</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Intake Process */}
-          <div className="rounded-2xl p-12 mb-0" style={{ background: "#F3F4F4" }}>
-            <div className="text-center mb-10">
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-400">How It Works</span>
-              <h3 className="font-serif text-3xl font-extrabold mt-3 mb-3" style={{ color: "#06205C" }}>
-                We start by understanding where you are.
-              </h3>
-              <p className="text-gray-500 max-w-xl mx-auto">
-                Before you begin, you will answer a few short questions. This helps us understand
-                your starting point so the program can be as useful and relevant as possible for you.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { step: "01", icon: "📋", title: "Baseline Questions", desc: "Share a bit about your background, financial situation, and what brought you to the program." },
-                { step: "02", icon: "📊", title: "Literacy Assessment", desc: "Answer a short set of questions to help us understand your current financial knowledge level." },
-                { step: "03", icon: "🎯", title: "Identify Your Needs", desc: "Tell us which areas matter most — budgeting, debt, credit, savings, or something else." },
-                { step: "04", icon: "🗺️", title: "Get Your Path", desc: "We place you in the right starting level and build a personalized path through the program." },
-              ].map((item) => (
-                <div key={item.step} className="bg-white rounded-xl p-6 text-center">
-                  <p className="font-serif text-3xl font-bold mb-3 opacity-20" style={{ color: "#06205C" }}>{item.step}</p>
-                  <span className="text-3xl mb-3 block">{item.icon}</span>
-                  <h4 className="font-display font-bold mb-2" style={{ color: "#06205C" }}>{item.title}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Programs Grid — curriculum topic areas */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
-            <div>
-              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#E1251B" }}>
-                Curriculum Topics
-              </span>
-              <h2 className="font-serif text-4xl font-extrabold mt-3 leading-tight" style={{ color: "#06205C" }}>
-                What Financial Sense Covers
-              </h2>
-            </div>
-            <div>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Our curriculum is being built around the real financial challenges that underserved
-                communities face — brought directly to where people already are: schools, churches,
-                community centers, and workplaces. No barriers, no cost, no jargon.
-              </p>
-              <p className="text-gray-400 text-sm mt-4">
-                These topic areas span the 101, 202, and 303 curriculum levels launching in 2026.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {programs.map((p) => (
-              <div key={p.title}
-                className="border border-gray-100 rounded-xl p-8 hover:shadow-md transition-shadow hover:border-blue-100 group">
-                <span className="text-4xl mb-5 block">{p.icon}</span>
-                <h3 className="font-bold text-lg mb-3 group-hover:text-blue-900 transition-colors"
-                  style={{ color: "#182857" }}>
-                  {p.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Toggle — charity:water "Why Water?" toggle style applied to financial impact */}
-      <section className="py-24" style={{ background: "#06205C" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="text-blue-300 text-sm font-bold uppercase tracking-widest">Data & Impact</span>
-            <h2 className="font-serif text-4xl font-extrabold text-white mt-3">
-              Why Financial Literacy Matters
-            </h2>
-          </div>
-
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {impactAreas.map((area) => (
-              <button
-                key={area}
-                onClick={() => setActiveImpact(area)}
-                className={`px-6 py-3 rounded text-sm font-bold uppercase tracking-wide transition-colors ${
-                  activeImpact === area
-                    ? "text-white"
-                    : "border border-white/30 text-white/60 hover:border-white/60"
-                }`}
-                style={activeImpact === area ? { background: "#E1251B" } : {}}
-              >
-                {area}
-              </button>
-            ))}
-          </div>
-
-          {/* Content */}
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="font-serif text-8xl font-extrabold text-white mb-6">
-              {impactContent[activeImpact].stat}
-            </p>
-            <p className="text-blue-200 text-xl leading-relaxed">
-              {impactContent[activeImpact].desc}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 101 / 202 / 303 Detailed Curriculum */}
+      {/* Your Path — guided journey, not a curriculum reveal */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">The Curriculum</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">How It Works</span>
             <h2 className="font-serif text-4xl font-extrabold mt-3 mb-4" style={{ color: "#06205C" }}>
-              Three levels. One transformation.
+              A clear path from where you are to where you want to be.
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              Each level builds on the last. Most participants complete the program in
-              9–12 months on average — progressing at a pace that works for their life.
+              Financial Sense meets you wherever you are and walks with you — stage by stage —
+              toward lasting financial confidence.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                level: "101",
-                title: "Introduction to Financial Literacy",
-                timeline: "3–4 Months",
+                step: "01",
+                title: "Start With the Basics",
+                desc: "Build a strong foundation — budgeting, saving, and understanding money in a way that's practical and immediately useful.",
                 color: "#06205C",
-                summary: "We start with the fundamentals — budgeting, understanding income and expenses, building savings habits, and setting financial goals. This level meets you wherever you are and builds a strong foundation from the ground up.",
               },
               {
-                level: "202",
-                title: "Building Financial Momentum",
-                timeline: "3–4 Months",
+                step: "02",
+                title: "Build Momentum",
+                desc: "Put knowledge into action. Work on reducing debt, improving your credit, and developing habits that last beyond the program.",
                 color: "#182857",
-                summary: "With the basics in place, participants focus on reducing debt, building or repairing credit, and strengthening their financial habits. This is where real momentum begins and lasting routines take hold.",
               },
               {
-                level: "303",
-                title: "Advanced Financial Readiness",
-                timeline: "3–4 Months",
+                step: "03",
+                title: "Reach Financial Readiness",
+                desc: "Come away with improved credit, a savings foundation, and a real plan for your financial future — and a certificate to show for it.",
                 color: "#1a3a6b",
-                summary: "The final level is about long-term stability — improving your credit profile, growing savings, and building the knowledge and plan to maintain lasting financial health for yourself and your family.",
               },
             ].map((item) => (
-              <div key={item.level} className="rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+              <div key={item.step} className="rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
                 <div className="p-8 text-white" style={{ background: item.color }}>
-                  <div className="flex items-center justify-between mb-4">
-                    <p className="font-serif text-5xl font-extrabold opacity-30">{item.level}</p>
-                    <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-white/20">
-                      {item.timeline}
-                    </span>
-                  </div>
+                  <p className="font-serif text-5xl font-extrabold opacity-30 mb-4">{item.step}</p>
                   <h3 className="font-serif text-xl font-bold">{item.title}</h3>
                 </div>
                 <div className="p-8">
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.summary}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Timeline visual */}
-          <div className="rounded-2xl p-10 text-center" style={{ background: "#F3F4F4" }}>
+          {/* Journey visual */}
+          <div className="mt-12 rounded-2xl p-10 text-center" style={{ background: "#F3F4F4" }}>
             <h3 className="font-serif text-2xl font-bold mb-8" style={{ color: "#06205C" }}>
               Your Journey, At Your Own Pace
             </h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-0">
               {[
-                { label: "101", sub: "Intro Level",    color: "#06205C" },
-                { label: "→",  sub: "",                color: "transparent" },
-                { label: "202", sub: "Intermediate",   color: "#182857" },
-                { label: "→",  sub: "",                color: "transparent" },
-                { label: "303", sub: "Advanced",       color: "#1a3a6b" },
-                { label: "→",  sub: "",                color: "transparent" },
-                { label: "🎓", sub: "Certificate",     color: "#1B4332" },
+                { label: "Basics",        sub: "Foundation",    color: "#06205C" },
+                { label: "→",            sub: "",               color: "transparent" },
+                { label: "Momentum",     sub: "Building",       color: "#182857" },
+                { label: "→",            sub: "",               color: "transparent" },
+                { label: "Readiness",    sub: "Advanced",       color: "#1a3a6b" },
+                { label: "→",            sub: "",               color: "transparent" },
+                { label: "🎓",           sub: "Certificate",    color: "#1B4332" },
               ].map((item, i) => (
                 item.label === "→"
                   ? <span key={i} className="text-gray-300 text-3xl font-bold px-2 hidden md:block">→</span>
                   : (
                     <div key={i} className="text-center px-6 py-4">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-serif font-extrabold text-lg mx-auto mb-2"
-                        style={{ background: item.color }}>
+                      <div className={`${item.label === "🎓" ? "w-28 h-28" : "w-28 h-28"} rounded-full flex items-center justify-center text-white font-serif font-extrabold mx-auto mb-2 text-center leading-tight px-2`}
+                        style={{ background: item.color, fontSize: item.label === "🎓" ? "2.5rem" : "1rem" }}>
                         {item.label}
                       </div>
-                      <p className="text-gray-500 text-xs font-semibold">{item.sub}</p>
+                      <p className="text-gray-500 text-xs font-semibold mt-2">{item.sub}</p>
                     </div>
                   )
               ))}
@@ -549,52 +280,7 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* Homework & Action Learning */}
-      <section className="py-24" style={{ background: "#06205C" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-300 mb-3 block">
-                Action-Oriented Learning
-              </span>
-              <h2 className="font-serif text-4xl font-extrabold text-white mb-6">
-                Every module comes with real homework.
-              </h2>
-              <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                Financial Sense is not about passive learning. Every module includes practical
-                assignments designed to be completed in real life — building habits and confidence
-                alongside knowledge.
-              </p>
-              <p className="text-gray-400 leading-relaxed">
-                Participants don't just learn about budgeting — they create one. They don't just
-                learn about debt — they make a plan to pay it down. Action is built into the program
-                from day one.
-              </p>
-            </div>
-            <div className="space-y-4">
-              {[
-                { icon: "📝", task: "Create a real monthly budget", level: "101" },
-                { icon: "📊", task: "Track your spending for 30 days", level: "101" },
-                { icon: "🏦", task: "Open or review a savings account", level: "101" },
-                { icon: "💳", task: "Pull and review your credit report", level: "202" },
-                { icon: "🎯", task: "Set a specific debt payoff goal", level: "202" },
-                { icon: "📈", task: "Build a 12-month savings target", level: "303" },
-                { icon: "🗓️", task: "Map your financial milestones", level: "303" },
-              ].map((item) => (
-                <div key={item.task} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
-                  <span className="text-2xl">{item.icon}</span>
-                  <p className="text-white text-sm flex-1">{item.task}</p>
-                  <span className="text-xs font-bold px-2 py-1 rounded-full bg-white/10 text-blue-200 shrink-0">
-                    {item.level}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Serve — 2 col layout like Operation HOPE */}
+      {/* Who We Serve */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
@@ -613,7 +299,7 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* Partners — Operation HOPE partner logo grid style */}
+      {/* Community Partners */}
       <section className="py-16 border-t border-gray-100" style={{ background: "#F3F4F4" }}>
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-gray-400 text-sm font-bold uppercase tracking-widest mb-10">
@@ -630,13 +316,13 @@ export default function FinancialSense() {
         </div>
       </section>
 
-      {/* Success Stories — Operation HOPE success stories section */}
+      {/* Success Story */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#E1251B" }}>
-                Success Stories
+                The Goal
               </span>
               <h2 className="font-serif text-4xl font-extrabold mt-3 mb-6 leading-tight" style={{ color: "#06205C" }}>
                 Real people. Real change.
@@ -654,140 +340,12 @@ export default function FinancialSense() {
                 Bring This Program to Your Community
               </Link>
             </div>
-            <div className="bg-gradient-to-br rounded-2xl h-80 flex items-center justify-center"
+            <div className="rounded-2xl h-80 flex items-center justify-center"
               style={{ background: "linear-gradient(135deg, #06205C, #182857)" }}>
               <div className="text-center text-white px-8">
                 <p className="font-serif text-3xl font-extrabold mb-4">Our Goal</p>
                 <p className="text-blue-200 text-lg">Equip every participant with the knowledge, tools, and confidence to build lasting financial stability — and pass it on to their community.</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Accountability Buddy + Certificate */}
-      <section className="py-24" style={{ background: "#FAF7F0" }}>
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-
-          {/* Accountability Buddy */}
-          <div className="bg-white rounded-2xl p-10 shadow-sm">
-            <span className="text-5xl mb-5 block">🤝</span>
-            <span className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3 block">
-              Coming Soon
-            </span>
-            <h3 className="font-serif text-2xl font-bold mb-4" style={{ color: "#06205C" }}>
-              Accountability Buddy
-            </h3>
-            <p className="text-gray-500 leading-relaxed mb-6">
-              Progress is stronger when you have someone in your corner. The accountability buddy
-              feature pairs you with a friend, family member, or trusted peer who keeps you
-              consistent, celebrates your wins, and supports you through every step of the journey.
-            </p>
-            <ul className="space-y-3 mb-6">
-              {[
-                "Stay consistent and on track together",
-                "Celebrate milestones and progress",
-                "Lean on each other for encouragement",
-                "Build lasting financial habits as a team",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
-                  <span className="mt-1 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#06205C" }} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold"
-              style={{ background: "#EEF2FF", color: "#06205C" }}>
-              <span>🔔</span>
-              <span>Launching with the portal in 2026</span>
-            </div>
-          </div>
-
-          {/* Certificate */}
-          <div className="bg-white rounded-2xl p-10 shadow-sm">
-            <span className="text-5xl mb-5 block">🎓</span>
-            <span className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3 block">
-              Program Completion
-            </span>
-            <h3 className="font-serif text-2xl font-bold mb-4" style={{ color: "#06205C" }}>
-              Certificate of Completion
-            </h3>
-            <p className="text-gray-500 leading-relaxed mb-6">
-              Participants who complete all three levels of the Financial Sense program will receive
-              an official certificate of completion — recognizing their commitment and the real
-              financial progress they have made.
-            </p>
-
-            {/* Certificate preview */}
-            <div className="rounded-xl border-2 border-dashed p-6 text-center mb-6"
-              style={{ borderColor: "#06205C", background: "#F8FAFF" }}>
-              <p className="font-serif text-lg font-bold mb-1" style={{ color: "#06205C" }}>
-                Certificate of Completion
-              </p>
-              <p className="text-gray-400 text-xs mb-3">Awarded to</p>
-              <p className="font-serif text-xl font-bold text-gray-800 mb-3">Your Name Here</p>
-              <p className="text-gray-500 text-xs leading-relaxed">
-                For successfully completing the<br />
-                <strong>Financial Sense Financial Readiness Program</strong><br />
-                Levels 101, 202, and 303
-              </p>
-              <div className="mt-4 pt-4 border-t border-gray-200">
-                <p className="text-xs text-gray-400">Sensible Living Foundation · sensiblelivingfoundation.org</p>
-              </div>
-            </div>
-
-            <p className="text-gray-400 text-sm">
-              Certificate preview — awarded upon completion of all 3 program levels.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Tool Integrations & Adaptive Platform */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3 block">
-                A Growing Platform
-              </span>
-              <h2 className="font-serif text-4xl font-extrabold mb-6" style={{ color: "#06205C" }}>
-                Built to grow with you — and with us.
-              </h2>
-              <p className="text-gray-500 leading-relaxed mb-5 text-lg">
-                The Financial Sense portal will start with a strong foundation and become more
-                personalized and responsive over time — learning from participants and adapting
-                to better serve each person's unique financial journey.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                We are also exploring partnerships with budgeting tools and financial wellness
-                platforms that could integrate with the program — giving participants practical
-                tools to use alongside their learning. We are keeping our options open and will
-                not lock into any single provider early.
-              </p>
-              <div className="space-y-3">
-                {[
-                  "Budgeting tools and spending trackers",
-                  "Credit monitoring resources",
-                  "Savings and goal-tracking apps",
-                  "Employer financial wellness integrations",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3 text-sm text-gray-600">
-                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "#06205C" }} />
-                    {item} <span className="text-gray-300 text-xs ml-1">(future)</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-2xl p-10 text-white text-center"
-              style={{ background: "linear-gradient(135deg, #06205C, #182857)" }}>
-              <span className="text-6xl mb-6 block">🚀</span>
-              <h3 className="font-serif text-2xl font-bold mb-4">Built to Grow</h3>
-              <p className="text-blue-200 leading-relaxed">
-                The Financial Sense portal will launch with a clean, accessible learning
-                experience and grow more personalized over time — always guided by what
-                participants actually need, never locked into a single tool or provider.
-              </p>
             </div>
           </div>
         </div>
