@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Go
+backend/bin/
+*.exe
+
+# Environment variables — never commit real keys
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Client-facing setup guide (shared separately)
+CLIENT_SETUP.md
+
+# Internal client feedback trackers (not for repo)
+CLIENT_FEEDBACK_TRACKER.md
+CLIENT_FEEDBACK_TRACKER_V2.md
+
+# Repurposed content — internal use only
+REPURPOSED_CONTENT.md
+
+# Brand style guide — internal use only
+BRAND_STYLE_GUIDE.md
+
+# Client preview/setup guide (shared separately)
+CLIENT_PREVIEW_GUIDE.md
+CLIENT_FEEDBACK_TRACKER_V3.md
