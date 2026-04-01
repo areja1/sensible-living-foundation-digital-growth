@@ -1,14 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import DonationForm from "./DonationForm";
-
-export const metadata = {
-  title: "Get Involved | Sensible Living Foundation",
-  description: "Donate, volunteer, partner, or subscribe. Support the Sensible Living Foundation.",
-};
+import Script from "next/script";
 
 export default function GetInvolved() {
   return (
     <div>
+      {/* HubSpot embed script — loads once for all 3 forms */}
+      <Script
+        src="https://js-na2.hsforms.net/forms/embed/245745020.js"
+        strategy="afterInteractive"
+      />
 
       {/* Hero */}
       <section className="relative flex items-end pb-24 overflow-hidden"
@@ -20,16 +23,14 @@ export default function GetInvolved() {
           }} />
         <div className="relative max-w-7xl mx-auto px-6 pt-36 w-full">
           <span className="section-label" style={{ color: "#52B788" }}>Take Action</span>
-          <h1 className="font-serif text-display-xl text-white mb-6">
-            Get Involved
-          </h1>
+          <h1 className="font-serif text-display-xl text-white mb-6">Get Involved</h1>
           <p className="text-gray-300 text-xl max-w-2xl">
             Every action — big or small — moves the mission forward. Choose yours below.
           </p>
         </div>
       </section>
 
-      {/* Sticky subnav — Feeding America wayfinding */}
+      {/* Sticky subnav */}
       <nav className="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 flex gap-8 overflow-x-auto py-4">
           {[
@@ -47,7 +48,7 @@ export default function GetInvolved() {
         </div>
       </nav>
 
-      {/* ─── DONATE ─── charity:water donation form + Feeding America "$1=10 meals" */}
+      {/* ─── DONATE ─── */}
       <section id="donate" className="py-24" style={{ background: "#FAF7F0" }}>
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
           <div>
@@ -59,14 +60,8 @@ export default function GetInvolved() {
               Every dollar goes directly to developing Financial Sense programming and launching
               Sense Gardens pilot sites in Phoenix. Your gift is fully tax-deductible.
             </p>
-
-            {/* Trust signals */}
             <div className="flex flex-wrap gap-4 mb-8 p-4 rounded-xl bg-white border border-gray-100">
-              {[
-                "501(c)(3) Registered Nonprofit",
-                "EIN: 99-2323968",
-                "Candid Silver Transparency",
-              ].map((item) => (
+              {["501(c)(3) Registered Nonprofit", "EIN: 99-2323968", "Candid Silver Transparency"].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-xs text-gray-500">
                   <span className="w-4 h-4 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
                     style={{ background: "#2D6A4F" }}>✓</span>
@@ -74,7 +69,6 @@ export default function GetInvolved() {
                 </div>
               ))}
             </div>
-            {/* Impact breakdown — Feeding America "$1=10 meals" style */}
             <div className="space-y-4 mb-8">
               {[
                 { amt: "$25",   impact: "Help provide seedlings, pods, or starter supplies for our pilot garden systems" },
@@ -90,7 +84,8 @@ export default function GetInvolved() {
               ))}
             </div>
             <div className="flex flex-wrap gap-3">
-              <a href="https://givebutter.com" target="_blank" rel="noopener noreferrer" className="btn-yellow">
+              {/* FIXED: correct Givebutter campaign URL */}
+              <a href="https://givebutter.com/sensefund" target="_blank" rel="noopener noreferrer" className="btn-yellow">
                 Donate via Givebutter →
               </a>
             </div>
@@ -98,8 +93,6 @@ export default function GetInvolved() {
               Sensible Living Foundation is a registered 501(c)(3) nonprofit. EIN: 99-2323968.
             </p>
           </div>
-
-          {/* Donation form */}
           <DonationForm />
         </div>
       </section>
@@ -114,7 +107,6 @@ export default function GetInvolved() {
               No experience required — just the desire to make a difference.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {[
               { icon: "🌱", title: "Garden Volunteer",       desc: "Support our hydroponic and vertical garden systems — set up growing pods, help prepare and maintain systems, assist with harvest and distribution, and support hands-on educational demonstrations for community participants." },
@@ -129,17 +121,13 @@ export default function GetInvolved() {
                 </div>
               </div>
             ))}
-
-            {/* Financial Educator — future opportunity */}
             <div className="flex gap-5 p-6 rounded-2xl border border-dashed border-slf-green-mid bg-green-50/40 hover:shadow-card transition-all">
               <span className="text-3xl mt-1">📚</span>
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <h3 className="font-display font-bold text-slf-charcoal">Financial Educator</h3>
                   <span className="text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-                    style={{ background: "#D8F3DC", color: "#1B4332" }}>
-                    Future Opportunity
-                  </span>
+                    style={{ background: "#D8F3DC", color: "#1B4332" }}>Future Opportunity</span>
                 </div>
                 <p className="text-gray-500 text-sm leading-relaxed mb-3">
                   Training financial educators is a core part of our long-term vision. As we build out the Financial Sense curriculum and educator pathway, we want to hear from people who are passionate about financial literacy and community education.
@@ -151,37 +139,18 @@ export default function GetInvolved() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* VOLUNTEER FORM — HubSpot */}
           <div className="max-w-2xl mx-auto">
             <div className="card !p-10">
               <h3 className="font-serif text-2xl font-bold text-slf-charcoal mb-6 text-center">
                 Volunteer Sign-Up
               </h3>
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <input type="text" placeholder="First Name" className="input" />
-                  <input type="text" placeholder="Last Name" className="input" />
-                </div>
-                <input type="email" placeholder="Email Address" className="input" />
-                <input type="tel" placeholder="Phone Number" className="input" />
-                <select className="input text-gray-400">
-                  <option value="">Area of Interest</option>
-                  <option>Sense Gardens (Hydroponic & Vertical Systems)</option>
-                  <option>Community Outreach</option>
-                  <option>Skills-Based Support</option>
-                  <option>Future Financial Educator (Interest List)</option>
-                </select>
-                <select className="input text-gray-400">
-                  <option value="">Availability</option>
-                  <option>Weekday mornings</option>
-                  <option>Weekday evenings</option>
-                  <option>Weekends</option>
-                  <option>Flexible</option>
-                </select>
-                <button type="submit" className="btn-green w-full justify-center !rounded">
-                  Submit Volunteer Interest
-                </button>
-              </form>
+              <div
+                className="hs-form-frame"
+                data-region="na2"
+                data-form-id="d6f1e17b-3253-4e93-92f1-aeb7a2c7a218"
+                data-portal-id="245745020"
+              />
             </div>
           </div>
         </div>
@@ -190,47 +159,26 @@ export default function GetInvolved() {
       {/* ─── PARTNER ─── */}
       <section id="partner" className="py-24" style={{ background: "#06205C" }}>
         <div className="max-w-7xl mx-auto px-6">
-
-          {/* Header */}
           <div className="text-center mb-16">
             <span className="section-label text-blue-300">Partner With Us</span>
-            <h2 className="font-serif text-display-lg text-white">
-              Build Something Meaningful Together
-            </h2>
+            <h2 className="font-serif text-display-lg text-white">Build Something Meaningful Together</h2>
             <p className="text-gray-300 mt-4 max-w-2xl mx-auto text-lg">
               We partner with schools, employers, community organizations, and individuals who share our commitment to financial empowerment, food access, and community health.
             </p>
           </div>
-
-          {/* Partner Categories */}
           <div className="grid md:grid-cols-2 gap-6 mb-16">
             {[
-              {
-                icon: "🏫",
-                title: "Schools & School Districts",
-                desc: "Bring garden education and wellness programming to your campus. We'd love to explore how our programs can support your students, teachers, and community.",
-              },
-              {
-                icon: "🏘️",
-                title: "Community Centers & Youth-Serving Organizations",
-                desc: "We align with organizations already working where the need is greatest. Let's talk about how our programs can support the communities you serve.",
-              },
-              {
-                icon: "🏢",
-                title: "Employers & Corporate Teams",
-                desc: "Create meaningful community impact through your organization. We make it easy for companies to invest in the communities where their people live and work.",
-              },
-              {
-                icon: "🤝",
-                title: "Individuals, Families & Sponsors",
-                desc: "You don't have to be a company to make a difference. There are meaningful ways to support the mission — on any budget and at any level.",
-              },
+              { icon: "🏫", title: "Schools & School Districts",                      desc: "Bring garden education and wellness programming to your campus. We'd love to explore how our programs can support your students, teachers, and community." },
+              { icon: "🏘️", title: "Community Centers & Youth-Serving Organizations", desc: "We align with organizations already working where the need is greatest. Let's talk about how our programs can support the communities you serve." },
+              { icon: "🏢", title: "Employers & Corporate Teams",                      desc: "Create meaningful community impact through your organization. We make it easy for companies to invest in the communities where their people live and work." },
+              { icon: "🤝", title: "Individuals, Families & Sponsors",                desc: "You don't have to be a company to make a difference. There are meaningful ways to support the mission — on any budget and at any level." },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors bg-white/5 flex flex-col">
                 <span className="text-4xl mb-5 block">{item.icon}</span>
                 <h3 className="font-display font-bold text-white text-xl mb-3">{item.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-1">{item.desc}</p>
-                <a href="mailto:partnerships@sensiblelivingfoundation.org"
+                {/* FIXED: correct email address */}
+                <a href="mailto:contact@sensiblelivingfoundation.org"
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-colors"
                   style={{ color: "#FFCA0A" }}>
                   Let's Connect →
@@ -238,8 +186,6 @@ export default function GetInvolved() {
               </div>
             ))}
           </div>
-
-          {/* Ways to Support */}
           <div className="mb-16">
             <h3 className="font-serif text-2xl text-white text-center mb-10">Ways to Support</h3>
             <div className="grid md:grid-cols-3 gap-5">
@@ -258,24 +204,20 @@ export default function GetInvolved() {
               ))}
             </div>
             <p className="text-center text-gray-400 text-sm mt-6">
-              Interested in any of these? Reach out and we'll share the details.
+              Interested in any of these? Reach out and we will share the details.
             </p>
           </div>
-
-          {/* CTA */}
           <div className="text-center">
-            <p className="text-gray-300 mb-6 text-lg">
-              Ready to start a conversation? We'd love to connect.
-            </p>
-            <a href="mailto:partnerships@sensiblelivingfoundation.org" className="btn-yellow">
+            <p className="text-gray-300 mb-6 text-lg">Ready to start a conversation? We'd love to connect.</p>
+            {/* FIXED: correct email address */}
+            <a href="mailto:contact@sensiblelivingfoundation.org" className="btn-yellow">
               Reach Out About Partnerships →
             </a>
           </div>
-
         </div>
       </section>
 
-      {/* ─── NEWSLETTER ─── */}
+      {/* ─── NEWSLETTER ─── HubSpot */}
       <section id="newsletter" className="py-24" style={{ background: "#FAF7F0" }}>
         <div className="max-w-2xl mx-auto px-6 text-center">
           <span className="section-label" style={{ color: "#2D6A4F" }}>Newsletter</span>
@@ -285,17 +227,18 @@ export default function GetInvolved() {
           <p className="text-gray-500 mb-8">
             Program updates, impact stories, and ways to help — no spam, ever.
           </p>
-          <form className="space-y-3 max-w-md mx-auto">
-            <input type="text" placeholder="Your Name" className="input !rounded" />
-            <input type="email" placeholder="Email Address" className="input !rounded" />
-            <button type="submit" className="btn-green w-full justify-center !rounded">
-              Subscribe to Newsletter
-            </button>
-          </form>
+          <div className="max-w-md mx-auto text-left">
+            <div
+              className="hs-form-frame"
+              data-region="na2"
+              data-form-id="1ec451ef-4edf-4e2f-8d87-6eccc3603ab3"
+              data-portal-id="245745020"
+            />
+          </div>
         </div>
       </section>
 
-      {/* ─── CONTACT ─── */}
+      {/* ─── CONTACT ─── HubSpot */}
       <section id="contact" className="py-24 bg-white">
         <div className="max-w-2xl mx-auto px-6">
           <div className="text-center mb-10">
@@ -304,26 +247,12 @@ export default function GetInvolved() {
             <p className="text-gray-500 mt-3">Have a question? We'd love to hear from you.</p>
           </div>
           <div className="card !p-10">
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="First Name" className="input" />
-                <input type="text" placeholder="Last Name" className="input" />
-              </div>
-              <input type="email" placeholder="Email Address" className="input" />
-              <select className="input text-gray-400">
-                <option value="">Reason for Inquiry</option>
-                <option>General Question</option>
-                <option>Volunteer Interest</option>
-                <option>Partnership Inquiry</option>
-                <option>Donation Question</option>
-                <option>Media / Press</option>
-              </select>
-              <textarea rows={5} placeholder="Your message..."
-                className="input resize-none" />
-              <button type="submit" className="btn-green w-full justify-center !rounded">
-                Send Message
-              </button>
-            </form>
+            <div
+              className="hs-form-frame"
+              data-region="na2"
+              data-form-id="9852fe6b-e8c0-494e-a9a9-7f81212a0fb5"
+              data-portal-id="245745020"
+            />
           </div>
         </div>
       </section>
