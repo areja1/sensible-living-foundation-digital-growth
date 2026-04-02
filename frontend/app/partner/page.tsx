@@ -3,11 +3,6 @@
 import Script from "next/script";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Partner With Us | Sensible Living Foundation",
-  description: "Partner with the Sensible Living Foundation. Bring free financial literacy and community garden programs to your school, organization, or business in Phoenix.",
-};
-
 export default function Partner() {
   return (
     <div>
